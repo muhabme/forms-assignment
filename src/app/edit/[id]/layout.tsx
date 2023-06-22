@@ -4,7 +4,7 @@ import { Form } from '@/types/types';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function layout({
+export default function Layout({
     children,
     params,
 }: {

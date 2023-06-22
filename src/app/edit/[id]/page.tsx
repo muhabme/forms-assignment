@@ -4,7 +4,7 @@ import { Form } from '@/types/types';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
     const { id } = params;
     const [data, setData] = useState<Form>({
         id: '',

@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 
-const safeDocument = typeof document !== 'undefined' ? document : {};
+const safeDocument =
+    typeof document !== 'undefined' ? document : ({} as Document);
 
-export default () => {
-    const scrollBlocked = useRef();
+const useScrollBlock = (): [() => void, () => void] => {
+    const scrollBlocked = useRef<boolean>(false);
     const html = safeDocument.documentElement;
     const { body } = safeDocument;
 
@@ -39,3 +40,5 @@ export default () => {
 
     return [blockScroll, allowScroll];
 };
+
+export default useScrollBlock;

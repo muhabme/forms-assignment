@@ -16,8 +16,8 @@ export default function Certification(props: {
                     I hereby certify the information that I have provided in
                     this subscription form is valid, correct, and complete, and
                     an integral part of this subscription form, and XYZ Capital
-                    in its capacity as the "Fund Manager" has the full right to
-                    rely on such data and information.
+                    in its capacity as the &ldquo;Fund Manager&ldquo; has the
+                    full right to rely on such data and information.
                     <br />
                     <br />
                     The applicant confirms that they have read and understood
@@ -38,8 +38,8 @@ export default function Certification(props: {
                     Accordingly, by accepting the Fund Manager to the signed
                     subscription form, they will become legally bound by all the
                     terms, conditions, and documents related to it and to the
-                    offering of the Fund's units, and this subscription form is
-                    subject to all the provisions stipulated in the Terms and
+                    offering of the Fund&apos;s units, and this subscription form
+                    is subject to all the provisions stipulated in the Terms and
                     Conditions of the Fund.
                 </p>
             </div>

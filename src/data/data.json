@@ -1,1 +1,97 @@
-[{"id":"6493b5b85eb099c61139f006","title":"Custodian Form","date":"8/20/2022, 2:08:19 PM","status":"Pending","data":{"name":"","addressOfCorrespondence":"","accountName":"","accountNumber":"","certificates":"","profits":"","outcomes":"","certificatesOther":"","profitsOther":"","outcomesOther":"","agreedToTOS":false}},{"id":"6493b5c8b66eb83f10f8e7bf","title":"AML Form","date":"12/23/2022, 2:08:19 PM","status":"Pending","data":{"name":"","addressOfCorrespondence":"","accountName":"","accountNumber":"","certificates":"","profits":"","outcomes":"","certificatesOther":"","profitsOther":"","outcomesOther":"","agreedToTOS":false}},{"id":"6493b5c3a7b0edc9fba11d4b","title":"Know Your Client Form","date":"4/22/2023, 2:08:19 PM","status":"Submitted","data":{"name":"asdasdsa","addressOfCorrespondence":"asdasdas","accountName":"asdad","accountNumber":"asdasdasd","certificates":"custodian","profits":"custodian","outcomes":"custodian","certificatesOther":"","profitsOther":"","outcomesOther":"","agreedToTOS":false}},{"id":"6493b5be9edac6d8b2635f05","title":"Foreign Account Tax Compliance Act","date":"3/23/2023, 2:08:19 PM","status":"Under Review","data":{"name":"asdsadasd","addressOfCorrespondence":"asdasdasd","accountName":"asdasdsa","accountNumber":"asdasdasd","certificates":"custodian","profits":"custodian","outcomes":"custodian","certificatesOther":"","profitsOther":"","outcomesOther":"","agreedToTOS":false}},{"id":"64943f7b7ce6165206ddffe5","title":"New Form","date":"6/22/2023, 2:32:59 PM","status":"Pending","data":{"name":"","addressOfCorrespondence":"","accountName":"","accountNumber":"","certificates":"","profits":"","outcomes":"","certificatesOther":"","profitsOther":"","outcomesOther":"","agreedToTOS":false}}]
+[
+    {
+        "id": "6493b5b85eb099c61139f006",
+        "title": "Custodian Form",
+        "date": "8/20/2022, 2:08:19 PM",
+        "status": "Pending",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "6493b5c8b66eb83f10f8e7bf",
+        "title": "AML Form",
+        "date": "12/23/2022, 2:08:19 PM",
+        "status": "Pending",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "6493b5ce2717b2669d0efa96",
+        "title": "Know Your Client Form",
+        "date": "6/21/2023, 2:08:19 PM",
+        "status": "Submitted",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "6493b5c3a7b0edc9fba11d4b",
+        "title": "Know Your Client Form",
+        "date": "4/22/2023, 2:08:19 PM",
+        "status": "Submitted",
+        "data": {
+            "name": "asdasdsa",
+            "addressOfCorrespondence": "asdasdas",
+            "accountName": "asdad",
+            "accountNumber": "asdasdasd",
+            "certificates": "custodian",
+            "profits": "custodian",
+            "outcomes": "custodian",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "6493b5be9edac6d8b2635f05",
+        "title": "Foreign Account Tax Compliance Act",
+        "date": "3/23/2023, 2:08:19 PM",
+        "status": "Under Review",
+        "data": {
+            "name": "asdsadasd",
+            "addressOfCorrespondence": "asdasdasd",
+            "accountName": "asdasdsa",
+            "accountNumber": "asdasdasd",
+            "certificates": "custodian",
+            "profits": "custodian",
+            "outcomes": "custodian",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    }
+]

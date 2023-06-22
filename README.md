@@ -1,34 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Forms Assignment
 
-## Getting Started
+This repository contains the source code for the Forms Assignment developed using Next.js. The application serves as an investment platform, allowing users to manage and interact with investment forms.
 
-First, run the development server:
+## Setup Instructions
+
+To set up and run the Forms Assignment application locally, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone [repository-url]
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd forms-assignment
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+4. Run the application:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to access the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+-   Homepage displaying all investment forms in descending order of their action date
+-   Each form preview includes the form title and a side menu showcasing requirements: Custodian Details, Other Information, and Certification
+-   Interactive sections for each requirement that expand to reveal the relevant fields
+-   Custom API routes in Next.js for handling CRUD operations (Create, Read, Update, Delete) on the forms using fs
+-   Communication with the backend API using Axios
+-   Data storage on the server-side using a JSON file
+-   Mobile-responsive design using Tailwind CSS (can be updated to use styled-components if preferred)
 
-## Learn More
+## Folder Structure
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```graphql 
+.
+├── public/                 # Static assets
+├── src/
+│   ├── app/                # Next.js pages and API routes
+│   ├── components/         # Reusable React components
+│   ├── types/              # TypeScript Types
+│   ├── hooks/              # Custom hooks
+│   ├── data/               # Data
+│   ├── utils/              # Utility functions and helpers
+│   └── data/               # Data files
+├── .gitignore              # Git ignore file
+├── next.config.js          # Next.js configuration file
+├── package.json            # Node.js dependencies and scripts
+├── package-lock.json       # Lock file for package versions
+├── postcss.config.js       # PostCSS configuration file
+├── tailwind.config.js      # Tailwind CSS configuration file
+├── tsconfig.json           # TypeScript configuration file
+└── README.md               # Project README file (you're reading it now)
+```

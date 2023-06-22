@@ -54,7 +54,6 @@ npm run dev
 │   ├── components/         # Reusable React components
 │   ├── types/              # TypeScript Types
 │   ├── hooks/              # Custom hooks
-│   ├── data/               # Data
 │   ├── utils/              # Utility functions and helpers
 │   └── data/               # Data files
 ├── .gitignore              # Git ignore file

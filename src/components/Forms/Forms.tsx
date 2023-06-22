@@ -23,11 +23,21 @@ export default function Forms() {
     };
 
     const [data, setData] = useState<Form[]>();
+    const [approved, setApproved] = useState<Form[]>();
+    const [pending, setPending] = useState<Form[]>();
     const getData = async () => {
         const formdata = await axios.get(`/api/forms`).then((res) => {
             return res.data;
         });
         setData(formdata);
+        const approvedData = formdata.filter((form: Form) => {
+            return form.status === 'Approved';
+        });
+        setApproved(approvedData);
+        const pendingData = formdata.filter((form: Form) => {
+            return form.status !== 'Approved';
+        });
+        setPending(pendingData);
     };
     useEffect(() => {
         getData();
@@ -91,7 +101,7 @@ export default function Forms() {
                     </thead>
                     <tbody>
                         {activeTab === 'Approved' &&
-                            data?.map(({ id, title, date }, index) => (
+                            approved?.map(({ id, title, date }, index) => (
                                 <tr
                                     className="flex items-center justify-between gap-12 border-b border-grey px-4"
                                     key={index}
@@ -137,57 +147,59 @@ export default function Forms() {
                                 </tr>
                             ))}
                         {activeTab === 'Pending' &&
-                            data?.map(({ id, title, date, status }, index) => (
-                                <tr
-                                    className="flex items-center justify-between gap-12 border-b border-grey px-4"
-                                    key={index}
-                                >
-                                    <td className="text-primary font-bold">
-                                        {index > 9
-                                            ? index + 1
-                                            : `0${index + 1}`}
-                                    </td>
-                                    <td className="grow flex-1">{title}</td>
-                                    <td className="grow flex-1">
-                                        {getDate(date)}
-                                    </td>
-                                    <td className="grow flex-1 flex">
-                                        <div
-                                            className={`${
-                                                status === 'Pending'
-                                                    ? 'text-green-600'
-                                                    : 'text-yellow-500'
-                                            } px-4 py-3 bg-grey dark:bg-white dark:bg-opacity-40 bg-opacity-25 rounded font-bold`}
-                                        >
-                                            {status}
-                                        </div>
-                                    </td>
-                                    <td className="flex items-center justify-center flex-wrap lg:flex-row gap-2 py-4 w-14 md:w-28">
-                                        <div>
-                                            <Button
-                                                square
-                                                linkTo={`/edit/${id}`}
+                            pending?.map(
+                                ({ id, title, date, status }, index) => (
+                                    <tr
+                                        className="flex items-center justify-between gap-12 border-b border-grey px-4"
+                                        key={index}
+                                    >
+                                        <td className="text-primary font-bold">
+                                            {index > 9
+                                                ? index + 1
+                                                : `0${index + 1}`}
+                                        </td>
+                                        <td className="grow flex-1">{title}</td>
+                                        <td className="grow flex-1">
+                                            {getDate(date)}
+                                        </td>
+                                        <td className="grow flex-1 flex">
+                                            <div
+                                                className={`${
+                                                    status === 'Pending'
+                                                        ? 'text-green-600'
+                                                        : 'text-yellow-500'
+                                                } px-4 py-3 bg-grey dark:bg-white dark:bg-opacity-40 bg-opacity-25 rounded font-bold`}
                                             >
-                                                <BsFillPencilFill />
-                                            </Button>
-                                        </div>
-                                        <div>
-                                            <Button
-                                                white
-                                                square
-                                                onClick={async () => {
-                                                    await axios.delete(
-                                                        `/api/forms/${id}`,
-                                                    );
-                                                    await getData();
-                                                }}
-                                            >
-                                                <BsTrash />
-                                            </Button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            ))}
+                                                {status}
+                                            </div>
+                                        </td>
+                                        <td className="flex items-center justify-center flex-wrap lg:flex-row gap-2 py-4 w-14 md:w-28">
+                                            <div>
+                                                <Button
+                                                    square
+                                                    linkTo={`/edit/${id}`}
+                                                >
+                                                    <BsFillPencilFill />
+                                                </Button>
+                                            </div>
+                                            <div>
+                                                <Button
+                                                    white
+                                                    square
+                                                    onClick={async () => {
+                                                        await axios.delete(
+                                                            `/api/forms/${id}`,
+                                                        );
+                                                        await getData();
+                                                    }}
+                                                >
+                                                    <BsTrash />
+                                                </Button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ),
+                            )}
                     </tbody>
                 </table>
             </div>

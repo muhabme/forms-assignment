@@ -9,7 +9,7 @@ To set up and run the Forms Assignment application locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/muhabme/forms-assignment.git
 ```
 
 2. Navigate to the project directory:
@@ -46,7 +46,7 @@ npm run dev
 
 ## Folder Structure
 
-```graphql 
+```graphql
 .
 ├── public/                 # Static assets
 ├── src/

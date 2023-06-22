@@ -2,26 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-image: url('../../public/background/bg-blob2.png'),
+        url('../../public/background/bg-blob1.png'),
+        url('../../public/background/bg-blob1.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: bottom -10% left -20%, top -10% left 50%,
+        bottom 40% right -80%;
+    background-size: 60%;
+    @apply dark:bg-bgdark dark:text-white transition-all dark:bg-none;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        background-position: bottom -30% left -20%, top -100% left 50%,
+            bottom -30% right -20%;
+        background-size: 55%;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    body {
+        background-position: bottom -30% left -20%, top -200% left 50%,
+            bottom -30% right -20%;
+        background-size: 42%;
+    }
 }

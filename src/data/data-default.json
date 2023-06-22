@@ -3,7 +3,7 @@
         "id": "6493b5b85eb099c61139f006",
         "title": "Custodian Form",
         "date": "8/20/2022, 2:08:19 PM",
-        "status": "Pending",
+        "status": "Approved",
         "data": {
             "name": "",
             "addressOfCorrespondence": "",
@@ -22,7 +22,7 @@
         "id": "6493b5c8b66eb83f10f8e7bf",
         "title": "AML Form",
         "date": "12/23/2022, 2:08:19 PM",
-        "status": "Pending",
+        "status": "Approved",
         "data": {
             "name": "",
             "addressOfCorrespondence": "",
@@ -41,7 +41,7 @@
         "id": "6493b5ce2717b2669d0efa96",
         "title": "Know Your Client Form",
         "date": "6/21/2023, 2:08:19 PM",
-        "status": "Submitted",
+        "status": "Approved",
         "data": {
             "name": "",
             "addressOfCorrespondence": "",
@@ -60,7 +60,7 @@
         "id": "6493b5c3a7b0edc9fba11d4b",
         "title": "Know Your Client Form",
         "date": "4/22/2023, 2:08:19 PM",
-        "status": "Submitted",
+        "status": "Approved",
         "data": {
             "name": "",
             "addressOfCorrespondence": "",
@@ -79,7 +79,121 @@
         "id": "6493b5be9edac6d8b2635f05",
         "title": "Foreign Account Tax Compliance Act",
         "date": "3/23/2023, 2:08:19 PM",
+        "status": "Approved",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "64944ee1877d05ed4176b3b9",
+        "title": "Custodian Form",
+        "date": "8/20/2022, 2:08:19 PM",
+        "status": "Pending",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "64944edb478b297600e79372",
+        "title": "Know Your Client Form",
+        "date": "12/23/2022, 2:08:19 PM",
+        "status": "Pending",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "64944ed6bd4fbdc9125a126b",
+        "date": "6/21/2023, 2:08:19 PM",
+        "title": "AML Form",
+        "status": "Submitted",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "64944ed18230330a2ce163bf",
+        "title": "Foreign Account Tax Compliance Act",
+        "date": "4/22/2023, 2:08:19 PM",
+        "status": "Submitted",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "64944eb535f35fc0992081a0",
+        "title": "Know Your Client Form",
+        "date": "3/23/2023, 2:08:19 PM",
         "status": "Under Review",
+        "data": {
+            "name": "",
+            "addressOfCorrespondence": "",
+            "accountName": "",
+            "accountNumber": "",
+            "certificates": "",
+            "profits": "",
+            "outcomes": "",
+            "certificatesOther": "",
+            "profitsOther": "",
+            "outcomesOther": "",
+            "agreedToTOS": false
+        }
+    },
+    {
+        "id": "64944d5a8b029a012e81c5cf",
+        "title": "New Form",
+        "date": "6/22/2023, 3:32:10 PM",
+        "status": "Pending",
         "data": {
             "name": "",
             "addressOfCorrespondence": "",

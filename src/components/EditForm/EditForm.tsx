@@ -8,11 +8,13 @@ import OtherInformation from './pages/OtherInformation';
 import TabNav from './TabNav';
 import Certification from './pages/Certification';
 import axios from 'axios';
+import LoadingSpinner from '../common/LoadingSpinner/LoadingSpinner';
 
 export default function EditForm(props: { data: Form }) {
     const { data } = props;
     const router = useRouter();
 
+    const [loading, setLoading] = useState(false);
     const [activeTab, setActiveTab] = useState<
         'Custodian Details' | 'Other Information' | 'Certification'
     >('Custodian Details');
@@ -31,9 +33,15 @@ export default function EditForm(props: { data: Form }) {
         agreedToTOS: false,
     });
     useEffect(() => {
-        setFormData(data?.data);
+        if (!data) {
+            setLoading(true);
+        } else {
+            setFormData(data?.data);
+            setLoading(false);
+        }
     }, [data]);
     const saveEdit = async () => {
+        setLoading(true);
         await axios.put(`/api/forms/${data?.id}`, {
             id: data?.id,
             title: data?.title,
@@ -41,32 +49,45 @@ export default function EditForm(props: { data: Form }) {
             status: data?.status,
             data: FormData,
         });
+        setLoading(false);
     };
     return (
         <div className="flex items-center justify-center flex-wrap lg:items-start lg:justify-start lg:grid lg:grid-cols-5 gap-8 lg: w-full">
             <TabNav activeTab={activeTab} setActiveTab={setActiveTab} />
             <div className="col-span-4 bg-white bg-opacity-30 backdrop-blur-3xl w-full p-4 rounded flex flex-col gap-4">
                 <h2 className="text-xl font-bold text-primary">{activeTab}</h2>
-                {activeTab == 'Custodian Details' && (
-                    <CustodianDetails
-                        FormData={FormData}
-                        setFormData={setFormData}
-                        data={data}
-                    />
+                {activeTab == 'Custodian Details' && loading ? (
+                    <LoadingSpinner />
+                ) : (
+                    activeTab == 'Custodian Details' && (
+                        <CustodianDetails
+                            FormData={FormData}
+                            setFormData={setFormData}
+                            data={data}
+                        />
+                    )
                 )}
-                {activeTab == 'Other Information' && (
-                    <OtherInformation
-                        FormData={FormData}
-                        setFormData={setFormData}
-                        data={data}
-                    />
+                {activeTab == 'Other Information' && loading ? (
+                    <LoadingSpinner />
+                ) : (
+                    activeTab == 'Other Information' && (
+                        <OtherInformation
+                            FormData={FormData}
+                            setFormData={setFormData}
+                            data={data}
+                        />
+                    )
                 )}
-                {activeTab == 'Certification' && (
-                    <Certification
-                        FormData={FormData}
-                        setFormData={setFormData}
-                        data={data}
-                    />
+                {activeTab == 'Certification' && loading ? (
+                    <LoadingSpinner />
+                ) : (
+                    activeTab == 'Certification' && (
+                        <Certification
+                            FormData={FormData}
+                            setFormData={setFormData}
+                            data={data}
+                        />
+                    )
                 )}
                 <div className="flex gap-8 self-center lg:self-end mt-4">
                     <Button white borderPrimary giant linkTo="/">

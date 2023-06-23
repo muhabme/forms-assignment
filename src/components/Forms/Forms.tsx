@@ -5,6 +5,7 @@ import { BsFillPencilFill, BsTrash, BsDownload } from 'react-icons/bs';
 import { AiOutlinePlus } from 'react-icons/ai';
 import axios from 'axios';
 import { Form } from '@/types/types';
+import LoadingSpinner from '../common/LoadingSpinner/LoadingSpinner';
 
 export default function Forms() {
     const [activeTab, setActiveTab] = useState<'Approved' | 'Pending'>(
@@ -22,10 +23,13 @@ export default function Forms() {
         return newDate;
     };
 
+    const [loading, setLoading] = useState(false);
     const [data, setData] = useState<Form[]>();
     const [approved, setApproved] = useState<Form[]>();
     const [pending, setPending] = useState<Form[]>();
+
     const getData = async () => {
+        setLoading(true);
         const formdata = await axios.get(`/api/forms`).then((res) => {
             return res.data;
         });
@@ -38,7 +42,9 @@ export default function Forms() {
             return form.status !== 'Approved';
         });
         setPending(pendingData);
+        setLoading(false);
     };
+
     useEffect(() => {
         getData();
     }, []);
@@ -66,8 +72,10 @@ export default function Forms() {
                     <Button
                         white
                         onClick={async () => {
+                            setLoading(true);
                             await axios.post('/api/forms');
                             await getData();
+                            setLoading(false);
                         }}
                     >
                         <AiOutlinePlus size={24} />
@@ -100,7 +108,10 @@ export default function Forms() {
                         </tr>
                     </thead>
                     <tbody>
-                        {activeTab === 'Approved' &&
+                        {activeTab === 'Approved' && loading ? (
+                            <LoadingSpinner />
+                        ) : (
+                            activeTab === 'Approved' &&
                             approved?.map(({ id, title, date }, index) => (
                                 <tr
                                     className="flex items-center justify-between gap-12 border-b border-grey px-4"
@@ -129,10 +140,12 @@ export default function Forms() {
                                                 white
                                                 square
                                                 onClick={async () => {
+                                                    setLoading(true);
                                                     await axios.delete(
                                                         `/api/forms/${id}`,
                                                     );
                                                     await getData();
+                                                    setLoading(false);
                                                 }}
                                             >
                                                 <BsTrash />
@@ -145,8 +158,12 @@ export default function Forms() {
                                         </div>
                                     </td>
                                 </tr>
-                            ))}
-                        {activeTab === 'Pending' &&
+                            ))
+                        )}
+                        {activeTab === 'Pending' && loading ? (
+                            <LoadingSpinner />
+                        ) : (
+                            activeTab === 'Pending' &&
                             pending?.map(
                                 ({ id, title, date, status }, index) => (
                                     <tr
@@ -187,10 +204,12 @@ export default function Forms() {
                                                     white
                                                     square
                                                     onClick={async () => {
+                                                        setLoading(true);
                                                         await axios.delete(
                                                             `/api/forms/${id}`,
                                                         );
                                                         await getData();
+                                                        setLoading(false);
                                                     }}
                                                 >
                                                     <BsTrash />
@@ -199,26 +218,11 @@ export default function Forms() {
                                         </td>
                                     </tr>
                                 ),
-                            )}
+                            )
+                        )}
                     </tbody>
                 </table>
             </div>
-            {/* <div className="flex items-center justify-center w-full">
-                <Button
-                    primary={activeTab === 'Approved'}
-                    white={activeTab === 'Pending'}
-                    onClick={() => setActiveTab('Approved')}
-                >
-                    Approved
-                </Button>
-                <Button
-                    primary={activeTab === 'Pending'}
-                    white={activeTab === 'Approved'}
-                    onClick={() => setActiveTab('Pending')}
-                >
-                    Pending
-                </Button>
-            </div> */}
         </div>
     );
 }
